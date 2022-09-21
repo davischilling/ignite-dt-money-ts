@@ -10,6 +10,9 @@ export const queryClient = new QueryClient()
 
 export const App = () => {
   return (
+    // <>
+    //   <h1>Hello</h1>
+    // </>
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <QueryClientProvider client={queryClient}>

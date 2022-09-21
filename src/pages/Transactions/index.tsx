@@ -29,10 +29,10 @@ export const TransactionsPage = () => {
         {!transactions ? (
           <SpinnerComponent />
         ) : (
-          <Table>
+          <Table data-testid="transactions-table">
             <tbody>
               {transactions.map((transaction) => (
-                <tr key={transaction.id}>
+                <tr key={transaction.id} data-testid={transaction.id}>
                   <td
                     width="40%"
                     onMouseEnter={() =>
