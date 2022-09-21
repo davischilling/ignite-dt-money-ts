@@ -3,7 +3,7 @@ import * as RadioGroup from '@radix-ui/react-radio-group'
 import styled from 'styled-components'
 
 interface ButtonTransactionTypeProps {
-  transactionType: 'income' | 'outcome'
+  transactiontype: 'income' | 'outcome'
 }
 
 export default {
@@ -100,7 +100,7 @@ export default {
 
     svg {
       color: ${(props) =>
-        props.transactionType === 'income'
+        props.transactiontype === 'income'
           ? props.theme['green-300']
           : props.theme['red-300']};
     }
@@ -108,7 +108,7 @@ export default {
     &[data-state='checked'] {
       color: ${(props) => props.theme.white};
       background: ${(props) =>
-        props.transactionType === 'income'
+        props.transactiontype === 'income'
           ? props.theme['green-500']
           : props.theme['red-500']};
 

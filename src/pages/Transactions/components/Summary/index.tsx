@@ -1,4 +1,5 @@
 import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from 'phosphor-react'
+import { SpinnerComponent } from '../../../../components'
 import { useSummary } from '../../../../hooks/useSummary'
 import { priceFormatter } from '../../../../utils/formatter'
 
@@ -17,7 +18,11 @@ export const SummaryComponent = () => {
           <ArrowCircleUp size={32} color="#00b37e" />
         </header>
 
-        <strong>{priceFormatter.format(summary.income)}</strong>
+        {summary ? (
+          <strong>{priceFormatter.format(summary.income)}</strong>
+        ) : (
+          <SpinnerComponent />
+        )}
       </DivSummaryCard>
 
       <DivSummaryCard>
@@ -26,7 +31,11 @@ export const SummaryComponent = () => {
           <ArrowCircleDown size={32} color="#f75a68" />
         </header>
 
-        <strong>-{priceFormatter.format(summary.outcome)}</strong>
+        {summary ? (
+          <strong>-{priceFormatter.format(summary.outcome)}</strong>
+        ) : (
+          <SpinnerComponent />
+        )}
       </DivSummaryCard>
 
       <DivSummaryCard colorProp="green">
@@ -35,7 +44,11 @@ export const SummaryComponent = () => {
           <CurrencyDollar size={32} color="#fff" />
         </header>
 
-        <strong>{priceFormatter.format(summary.total)}</strong>
+        {summary ? (
+          <strong>{priceFormatter.format(summary.total)}</strong>
+        ) : (
+          <SpinnerComponent />
+        )}
       </DivSummaryCard>
     </DivWrapper>
   )

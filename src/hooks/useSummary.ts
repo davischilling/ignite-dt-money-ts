@@ -10,6 +10,7 @@ export const useSummary = () => {
 
   const summary = useMemo(
     () =>
+      transactions &&
       transactions.reduce(
         (previous, transaction) => {
           if (transaction.type === 'income') {

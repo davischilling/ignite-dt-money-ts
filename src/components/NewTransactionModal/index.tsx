@@ -40,7 +40,12 @@ export const NewTransactionModalComponent = () => {
           <X />
         </Close>
 
-        <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
+        <form
+          onSubmit={
+            // () => {}
+            handleSubmit(handleCreateNewTransaction)
+          }
+        >
           <input
             type="text"
             placeholder="Descrição"
@@ -68,12 +73,12 @@ export const NewTransactionModalComponent = () => {
                 onValueChange={field.onChange}
                 value={field.value}
               >
-                <ButtonTransactionType transactionType="income" value="income">
+                <ButtonTransactionType transactiontype="income" value="income">
                   <ArrowCircleUp size={24} />
                   Entrada
                 </ButtonTransactionType>
                 <ButtonTransactionType
-                  transactionType="outcome"
+                  transactiontype="outcome"
                   value="outcome"
                 >
                   <ArrowCircleDown size={24} />

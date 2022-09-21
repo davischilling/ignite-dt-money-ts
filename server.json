@@ -39,6 +39,38 @@
       "type": "income",
       "createdAt": "2022-09-19T22:53:23.184Z",
       "id": 5
+    },
+    {
+      "description": "pizza",
+      "price": 30,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "Tue Sep 20 2022 18:34:06 GMT-0300 (Brasilia Standard Time)",
+      "id": 6
+    },
+    {
+      "description": "pastel",
+      "price": 5,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "Tue Sep 20 2022 22:06:00 GMT-0300 (Brasilia Standard Time)",
+      "id": 7
+    },
+    {
+      "description": "doritos",
+      "price": 10,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "Tue Sep 20 2022 22:07:03 GMT-0300 (Brasilia Standard Time)",
+      "id": 8
+    },
+    {
+      "description": "Cocacola",
+      "price": 10,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "Tue Sep 20 2022 22:08:06 GMT-0300 (Brasilia Standard Time)",
+      "id": 9
     }
   ]
 }
