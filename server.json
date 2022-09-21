@@ -71,6 +71,14 @@
       "type": "outcome",
       "createdAt": "Tue Sep 20 2022 22:08:06 GMT-0300 (Brasilia Standard Time)",
       "id": 9
+    },
+    {
+      "description": "salario",
+      "price": 14000,
+      "category": "Emprego",
+      "type": "income",
+      "createdAt": "Wed Sep 21 2022 10:47:23 GMT-0300 (Brasilia Standard Time)",
+      "id": 10
     }
   ]
 }

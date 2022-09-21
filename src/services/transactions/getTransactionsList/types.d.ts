@@ -6,3 +6,9 @@ export type Transaction = {
   price: number
   createdAt: string
 }
+
+export type Pagination = {
+  query?: string
+  page?: number
+  limit?: number
+}

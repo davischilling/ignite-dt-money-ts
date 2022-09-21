@@ -1,11 +1,12 @@
 import { ReactNode, useState } from 'react'
 import { createContext } from 'use-context-selector'
 import {
-  useGetTransactionsList,
   useCreateTransaction,
   useGetPrefetchedTransaction,
+  useGetTransactionsList,
 } from '../services/transactions'
 import { PostTransaction } from '../services/transactions/createTransaction/types'
+import { Pagination } from '../services/transactions/getTransactionsList/types'
 
 export interface Transaction {
   id: number
@@ -25,7 +26,8 @@ type NewTransactionFormData = {
 
 interface TransactionsContextType {
   transactions: Transaction[] | undefined
-  fetchTransactions: (query?: string) => Promise<void>
+  pagination: Pagination
+  fetchTransactions: (pagination: Pagination) => Promise<void>
   createNewTransaction: (data: NewTransactionFormData) => Promise<void>
   handlePrefetchTransaction: (id: string) => Promise<void>
 }
@@ -67,13 +69,18 @@ export const TransactionsProvider = ({
   //   [],
   // )
 
-  const [query, setQuery] = useState('')
+  const [pagination, setPagination] = useState<Pagination>({
+    query: '',
+    page: 1,
+    limit: 5,
+  })
 
-  const { data: transactions, refetch } = useGetTransactionsList(query)
+  const { data: transactions, refetch } = useGetTransactionsList(pagination)
+
   const { mutateAsync } = useCreateTransaction()
 
-  const fetchTransactions = async (q?: string) => {
-    setQuery(q || '')
+  const fetchTransactions = async ({ query, page, limit }: Pagination) => {
+    setPagination({ query, page, limit })
   }
 
   const createNewTransaction = async (data: NewTransactionFormData) => {
@@ -93,6 +100,7 @@ export const TransactionsProvider = ({
     <TransactionsContext.Provider
       value={{
         transactions,
+        pagination,
         fetchTransactions,
         createNewTransaction,
         handlePrefetchTransaction,

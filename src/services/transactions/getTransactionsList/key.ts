@@ -1,6 +1,7 @@
 import { QueryKey } from 'react-query'
+import { Pagination } from './types'
 
-export const getTransactionsListKey = (query?: string): QueryKey => [
+export const getTransactionsListKey = (pagination: Pagination): QueryKey => [
   'getTransactionsList',
-  query,
+  pagination,
 ]

@@ -1,12 +1,14 @@
 import { useMemo } from 'react'
-import { useContextSelector } from 'use-context-selector'
-
-import { TransactionsContext } from './../contexts/TransactionsContext'
+import { useGetTransactionsList } from '../services/transactions'
+// import { useContextSelector } from 'use-context-selector'
+// import { TransactionsContext } from './../contexts/TransactionsContext'
 
 export const useSummary = () => {
-  const transactions = useContextSelector(TransactionsContext, (context) => {
-    return context.transactions
-  })
+  // const transactions = useContextSelector(TransactionsContext, (context) => {
+  //   return context.transactions
+  // })
+
+  const { data: transactions } = useGetTransactionsList({})
 
   const summary = useMemo(
     () =>

@@ -26,12 +26,12 @@ export const TransactionsPage = () => {
 
       <DivTransactions>
         <SearchFormComponent />
-        <Table>
-          <tbody>
-            {!transactions ? (
-              <SpinnerComponent />
-            ) : (
-              transactions.map((transaction) => (
+        {!transactions ? (
+          <SpinnerComponent />
+        ) : (
+          <Table>
+            <tbody>
+              {transactions.map((transaction) => (
                 <tr key={transaction.id}>
                   <td
                     width="40%"
@@ -52,10 +52,10 @@ export const TransactionsPage = () => {
                     {dateFormatter.format(new Date(transaction.createdAt))}
                   </td>
                 </tr>
-              ))
-            )}
-          </tbody>
-        </Table>
+              ))}
+            </tbody>
+          </Table>
+        )}
       </DivTransactions>
     </div>
   )
